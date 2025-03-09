@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-around  py-3 md:py-5 border-b-2">
+    <nav className="sticky inset-0 top-0 h-fit  flex items-center justify-around  py-3 md:py-5 border-b-2 bg-white dark:bg-black">
       <div className="uppercase tracking-widest font-bold ">rawg</div>
       <Input
         placeholder="Search game..."
