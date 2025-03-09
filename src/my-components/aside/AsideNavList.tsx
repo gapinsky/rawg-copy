@@ -10,7 +10,7 @@ const AsideNavList = () => {
         <img
           src="/images/noImage.png"
           alt=""
-          className="ml-2 h-8 rounded-full"
+          className="ml-2 h-8 rounded-full border"
         />
       </li>
       <li className="text-lg flex items-center">
