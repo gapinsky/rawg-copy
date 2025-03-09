@@ -10,9 +10,9 @@ export function ModeToggle() {
         id="switch-theme"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       />
-      <label htmlFor="switch-theme">
+      {/* <label htmlFor="switch-theme">
         {theme === "dark" ? "Light" : "Dark"} Mode
-      </label>
+      </label> */}
     </div>
   );
 }
