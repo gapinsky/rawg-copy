@@ -1,21 +1,11 @@
-import GenreItem from "./GenreItem";
-import useGenres from "./useGenres";
+import GenresList from "../genres/GenresList";
 
+import AsideNavList from "./AsideNavList";
 const Aside = () => {
-  const { data: genres, isLoading } = useGenres();
-  !isLoading && console.log(genres);
   return (
-    <aside>
-      <ul>
-        {genres?.map((genre) => (
-          <GenreItem
-            name={genre.name}
-            image={genre.image_background}
-            slug={genre.slug}
-            key={genre.id}
-          />
-        ))}
-      </ul>
+    <aside className="relative space-y-2 border-2 hidden w-56 lg:block ">
+      <AsideNavList />
+      <GenresList />
     </aside>
   );
 };

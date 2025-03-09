@@ -1,5 +1,5 @@
 const GamesGrid = () => {
-  return <div>GamesGrid</div>;
+  return <div className=" w-full h-[90vh]">GamesGrid</div>;
 };
 
 export default GamesGrid;

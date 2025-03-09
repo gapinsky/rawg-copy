@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import Homepage from "./Homepage";
 import HomepageLayout from "./HomepageLayout";
+import GamesGrid from "./GamesGrid";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
+    element: <HomepageLayout />,
     children: [
       {
         path: "",
-        element: <HomepageLayout />,
+        element: <GamesGrid />,
       },
     ],
   },
