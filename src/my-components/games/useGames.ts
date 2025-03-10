@@ -1,7 +1,7 @@
 import APIClient from "@/services/apiClient";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-interface GamesProps {
+export interface GamesProps {
   id: number;
   slug: string;
   name: string;
@@ -17,11 +17,20 @@ interface Platforms {
 
 const apiClient = new APIClient<GamesProps[]>();
 
-const useGames = (pageNumber: number = 1) => {
-  return useQuery<GamesProps[], Error>({
-    queryKey: ["games", pageNumber],
-    queryFn: () => apiClient.getGames(pageNumber),
+// const useGames = (pageNumber: number = 1) => {
+//   return useQuery<GamesProps[], Error>({
+//     queryKey: ["games", pageNumber],
+//     queryFn: () => apiClient.getGames(pageNumber),
+//     staleTime: 5 * 60 * 1000,
+
+//   });
+const useGames = () => {
+  return useInfiniteQuery({
+    queryKey: ["games"],
+    queryFn: apiClient.getGames,
     staleTime: 5 * 60 * 1000,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => lastPage.nextPage,
   });
 };
 

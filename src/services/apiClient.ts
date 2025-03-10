@@ -1,3 +1,4 @@
+import { GamesProps } from "@/my-components/games/useGames";
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -18,13 +19,28 @@ class APIClient<T> {
   //   .get(`/games?key=${APIClient.API_KEY}&page_size=9`)
   //   .then((res) => res.data);
   // };
-  getGames = (page: number) => {
+  getGames = <T extends GamesProps>({
+    pageParam,
+  }: {
+    pageParam: number;
+  }): Promise<getGamesProps> => {
     return axiosInstance
-      .get<{ results: T }>("/games", {
-        params: { key: APIClient.API_KEY, page: page, page_size: 9 },
+      .get<{ results: T[] }>("/games", {
+        params: { page: pageParam, page_size: 9, key: APIClient.API_KEY },
       })
-      .then((res) => res.data.results);
+      .then((res) => {
+        return {
+          data: res.data.results,
+          currentPage: pageParam,
+          nextPage: res.data.results.length === 9 ? pageParam + 1 : null,
+        };
+      });
   };
 }
 export default APIClient;
 
+interface getGamesProps {
+  data: GamesProps[];
+  currentPage: number;
+  nextPage: number | null;
+}

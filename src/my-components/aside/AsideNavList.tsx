@@ -3,8 +3,8 @@ import { VscLibrary } from "react-icons/vsc";
 
 const AsideNavList = () => {
   return (
-    <ul className="space-y-4 lg:space-y-2 text-2xl">
-      <li className=" font-bold">Home</li>
+    <ul className="w-[40%] px-2  space-y-4 lg:px-0 lg:space-y-2 lg:w-fit ">
+      <li className="text-2xl font-bold">Home</li>
       <li className="text-lg flex items-center">
         nickname
         <img
@@ -14,11 +14,11 @@ const AsideNavList = () => {
         />
       </li>
       <li className="text-lg flex items-center">
-        <VscLibrary className=" mr-2" />
+        <VscLibrary className="text-2xl mr-2" />
         My library
       </li>
       <li className="text-lg flex items-center">
-        <GrGift className=" mr-2" /> Wishlist
+        <GrGift className="text-2xl mr-2" /> Wishlist
       </li>
     </ul>
   );

@@ -11,9 +11,9 @@ const GenreItem = ({ name, image, slug }: Props) => {
       <img
         src={image}
         alt={`${name} image`}
-        className="h-8 aspect-square object-center mr-2 rounded-md bg-neutral-300"
+        className="h-8  aspect-square object-center mr-2 rounded-md bg-neutral-300"
       />{" "}
-      <span className="text-lg">{name}</span>
+      <span className="text-lg ">{name}</span>
     </li>
   );
 };
