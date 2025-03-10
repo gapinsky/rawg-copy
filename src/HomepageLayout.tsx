@@ -5,7 +5,7 @@ import Navbar from "./my-components/navbar/Navbar";
 
 const HomepageLayout = () => {
   return (
-    <div className="relative bg-neutral-50 dark:bg-neutral-900 ">
+    <div className="relative bg-neutral-50 dark:bg-neutral-900 overflow-hidden">
       <Navbar />
       <div className="flex px-2 py-2  lg:px-6 ">
         <Aside />

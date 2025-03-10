@@ -8,7 +8,7 @@ export interface GamesProps {
   released: string;
   background_image: string;
   metacritic: number;
-  platforms: Platforms;
+  platforms: Platforms[];
 }
 
 interface Platforms {
