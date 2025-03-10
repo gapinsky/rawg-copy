@@ -7,8 +7,7 @@ export interface GenreProps {
   image_background: string;
   slug: string;
 }
-const apiKey = import.meta.env.VITE_API_KEY;
-const apiClient = new APIClient<GenreProps[]>(`/genres?key=${apiKey}`);
+const apiClient = new APIClient<GenreProps[]>();
 
 const useGenres = () => {
   return useQuery<GenreProps[], Error>({
