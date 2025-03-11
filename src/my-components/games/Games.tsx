@@ -15,7 +15,7 @@ const Games = () => {
           setGamesDisplay={setGamesDisplay}
         />
       </div>
-      {/* <GamesGrid gamesDisplay={gamesDisplay} /> */}
+      <GamesGrid gamesDisplay={gamesDisplay} />
     </div>
   );
 };

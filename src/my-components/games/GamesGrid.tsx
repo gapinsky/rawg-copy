@@ -24,7 +24,7 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
       {data.pages.map((page) => (
         <div
           key={page.currentPage}
-          className=" grid grid-cols-1 justify-items-center  bg-blue-500 lg:grid-cols-3"
+          className=" grid grid-cols-1 justify-items-center  bg-blue-500 lg:grid-cols-2  xl:grid-cols-3"
         >
           {page.data.map((item) => (
             <GameCard

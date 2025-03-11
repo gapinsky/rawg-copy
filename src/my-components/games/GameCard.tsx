@@ -36,11 +36,11 @@ const GameCard = ({
   };
 
   return (
-    <div className="border-2  border-neutral-300 my-5 rounded-lg overflow-hidden shadow-lg max-w-lg bg-neutral-100 dark:bg-neutral-700">
+    <div className="border-2  border-neutral-300 m-5 rounded-lg overflow-hidden shadow-lg max-w-lg bg-neutral-100 dark:bg-neutral-700">
       <img
         src={background_image}
         alt={`${name} thumbnail`}
-        className="h-52  object-cover md:h-64 "
+        className="h-52  w-lg object-cover md:h-64 bg-neutral-500"
       />
       <div className="p-2 ">
         <div className="flex space-x-3 ">
