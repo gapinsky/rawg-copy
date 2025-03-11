@@ -13,7 +13,7 @@ const GamesDisplayOptions = ({ gamesDisplay, setGamesDisplay }: Props) => {
         Display Options
       </p>
       <button
-        className={`text-2xl p-2  rounded-md  bg-neutral-300 opacity-40 cursor-pointer dark:text-neutral-900 ${
+        className={`text-2xl p-2  rounded-md  bg-neutral-300 opacity-40 cursor-pointer  dark:bg-neutral-500 dark:text-neutral-50 ${
           gamesDisplay == "grid" && " opacity-100"
         }`}
         onClick={() => setGamesDisplay("grid")}
@@ -21,7 +21,7 @@ const GamesDisplayOptions = ({ gamesDisplay, setGamesDisplay }: Props) => {
         <BsGrid />
       </button>
       <button
-        className={`text-2xl p-2  rounded-md bg-neutral-300 opacity-40 cursor-pointer dark:text-neutral-900  ${
+        className={`text-2xl p-2  rounded-md bg-neutral-300 opacity-40 cursor-pointer   dark:bg-neutral-500 dark:text-neutral-50 ${
           gamesDisplay == "col" && " opacity-100"
         }`}
         onClick={() => setGamesDisplay("col")}

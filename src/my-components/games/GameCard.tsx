@@ -45,7 +45,7 @@ const GameCard = ({
     <div
       className={`${
         gamesDisplay === "col" ? "w-[70%]" : "w-full"
-      } border-2  border-neutral-300 my-5 rounded-lg overflow-hidden shadow-lg  bg-neutral-100 dark:bg-neutral-700`}
+      } border-2  border-neutral-300 my-5 rounded-lg overflow-hidden shadow-lg text-neutral-900  bg-neutral-100 dark:shadow-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:border-neutral-800`}
     >
       <img
         src={background_image}
@@ -54,13 +54,13 @@ const GameCard = ({
           gamesDisplay === "col" ? "h-[300px] object-top" : "md:h-64"
         } h-52 object-center object-cover   bg-neutral-500 w-full`}
       />
-      <div className="p-2 ">
+      <div className="py-2 px-4 ">
         <div className="flex space-x-3 ">
           {uniquePlatformArray.map((item) => (
             <p className="text-xl ">{getLogo(item)}</p>
           ))}
         </div>
-        <p className="text-2xl font-semibold ">{name}</p>
+        <p className="text-2xl font-semibold lg:text-3xl my-1">{name}</p>
         <p
           className={`font-bold  ${metacritic < 25 && "text-red-600"} ${
             metacritic < 50 && "text-orange-600"
@@ -77,11 +77,11 @@ const GameCard = ({
         <div className=" flex items-start justify-between">
           <p>{released}</p>
           <p className="flex space-x-4 justify-end">
-            <button className="flex items-center bg-neutral-200 border-neutral-300 border text-neutral-600 shadow-md  px-2 py-1 rounded-md ">
+            <button className="flex items-center bg-neutral-200 border-neutral-300 border text-neutral-800   px-2 py-1 rounded-md  dark:bg-neutral-500 dark:text-neutral-50 dark:border-neutral-600">
               <GrGift className="mr-1" />
               <GoPlus className="text-xl" />
             </button>
-            <button className="flex items-center bg-neutral-200 border-neutral-300 border text-neutral-600 shadow-md  px-2 py-1 rounded-md font-semibold">
+            <button className="flex items-center bg-neutral-200 border-neutral-300 border text-neutral-800   px-2 py-1 rounded-md font-semibold dark:bg-neutral-500 dark:text-neutral-50 dark:border-neutral-600">
               <VscLibrary className="mr-1" /> Add
             </button>
           </p>
