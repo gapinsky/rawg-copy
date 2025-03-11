@@ -8,7 +8,7 @@ interface Props {
 
 const GamesDisplayOptions = ({ gamesDisplay, setGamesDisplay }: Props) => {
   return (
-    <div className="hidden lg:flex items-center space-x-3">
+    <div className="hidden xl:flex items-center space-x-3">
       <p className="text-sm font-semibold text-neutral-600 dark:text-neutral-400">
         Display Options
       </p>

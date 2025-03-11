@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import useGames from "./useGames";
 import { useInView } from "react-intersection-observer";
 import Loader from "../general/Loader";
-import GameCard from "./GameCard";
+import GameCard from "./gameCard/GameCard";
+import dummyData from "../general/skeletonData";
+import SkeletonGameCard from "../general/SkeletonGameCard";
 interface Props {
   gamesDisplay: string;
 }
@@ -17,7 +19,21 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
     }
   }, [fetchNextPage, inView]);
   // console.log(data, error, status);
-  if (status === "pending") return <p>Loading... tu skeletony wrzucam</p>;
+  if (status === "pending")
+    return (
+      <div
+        className={`
+        grid grid-cols-1 justify-items-center   gap-x-10  ${
+          gamesDisplay === "grid"
+            ? "lg:grid-cols-2  xl:grid-cols-3"
+            : "grid-cols-1"
+        }`}
+      >
+        {dummyData.map((item) => (
+          <SkeletonGameCard key={item} gamesDisplay={gamesDisplay} />
+        ))}
+      </div>
+    );
   if (status === "error") return <p>{error.message}</p>;
   return (
     <div className="flex flex-col  w-full  ">
@@ -26,13 +42,12 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
           key={page.currentPage}
           className={`
              grid grid-cols-1 justify-items-center   gap-x-10  ${
-               gamesDisplay === "grid"
-                 ? "lg:grid-cols-2  xl:grid-cols-3"
-                 : "grid-cols-1"
+               gamesDisplay === "grid" ? "  xl:grid-cols-3" : "grid-cols-1"
              }`}
         >
           {page.data.map((item) => (
             <GameCard
+
               gamesDisplay={gamesDisplay}
               key={item.id}
               slug={item.slug}
