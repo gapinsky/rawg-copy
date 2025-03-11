@@ -20,14 +20,20 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
   if (status === "pending") return <p>Loading... tu skeletony wrzucam</p>;
   if (status === "error") return <p>{error.message}</p>;
   return (
-    <div className="flex flex-col  w-full bg-red-500 ">
+    <div className="flex flex-col  w-full  ">
       {data.pages.map((page) => (
         <div
           key={page.currentPage}
-          className=" grid grid-cols-1 justify-items-center  bg-blue-500 lg:grid-cols-2  xl:grid-cols-3"
+          className={`
+             grid grid-cols-1 justify-items-center  bg-blue-500 gap-x-10  ${
+               gamesDisplay === "grid"
+                 ? "lg:grid-cols-2  xl:grid-cols-3"
+                 : "grid-cols-1"
+             }`}
         >
           {page.data.map((item) => (
             <GameCard
+              gamesDisplay={gamesDisplay}
               key={item.id}
               slug={item.slug}
               released={item.released}

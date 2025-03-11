@@ -6,13 +6,19 @@ import { GamesProps } from "./useGames";
 import { GrGift } from "react-icons/gr";
 import { VscLibrary } from "react-icons/vsc";
 import { GoPlus } from "react-icons/go";
+
+interface Props extends GamesProps {
+  gamesDisplay: string;
+}
+
 const GameCard = ({
   name,
   released,
   background_image,
   metacritic,
   platforms,
-}: GamesProps) => {
+  gamesDisplay,
+}: Props) => {
   const platformArray = platforms.map((item) => {
     if (item.platform.name.toLowerCase().includes("playstation"))
       return "playstation";
@@ -36,11 +42,17 @@ const GameCard = ({
   };
 
   return (
-    <div className="border-2  border-neutral-300 m-5 rounded-lg overflow-hidden shadow-lg max-w-lg bg-neutral-100 dark:bg-neutral-700">
+    <div
+      className={`${
+        gamesDisplay === "col" ? "w-[70%]" : "w-full"
+      } border-2  border-neutral-300 my-5 rounded-lg overflow-hidden shadow-lg  bg-neutral-100 dark:bg-neutral-700`}
+    >
       <img
         src={background_image}
         alt={`${name} thumbnail`}
-        className="h-52  w-lg object-cover md:h-64 bg-neutral-500"
+        className={`${
+          gamesDisplay === "col" ? "h-[300px] object-top" : "md:h-64"
+        } h-52 object-center object-cover   bg-neutral-500 w-full`}
       />
       <div className="p-2 ">
         <div className="flex space-x-3 ">
