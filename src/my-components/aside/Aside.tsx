@@ -1,4 +1,4 @@
-import GenresList from "../genres/GenresList";
+import GenresList from "./genres/GenresList";
 
 import AsideNavList from "./AsideNavList";
 const Aside = () => {

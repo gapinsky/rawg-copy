@@ -4,10 +4,14 @@ import { Input } from "@/components/ui/input";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { GrGift } from "react-icons/gr";
 import { VscLibrary } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="sticky  z-10 inset-0 top-0 h-fit  flex items-center justify-around  py-3 md:py-5 border-b-2 bg-neutral-50 dark:bg-neutral-900">
-      <div className="uppercase tracking-widest font-bold ">rawg</div>
+      <Link className="uppercase tracking-widest font-bold " to="">
+        rawg
+      </Link>
+
       <Input
         placeholder="Search game..."
         className="max-w-[50%] md:max-w-[70%] lg:max-w-[75%]"

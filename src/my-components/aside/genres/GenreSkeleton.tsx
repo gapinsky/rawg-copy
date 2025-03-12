@@ -1,4 +1,4 @@
-import dummyData from "../general/skeletonData";
+import dummyData from "../../general/skeletonData";
 
 const GenreSkeleton = () => {
   return (

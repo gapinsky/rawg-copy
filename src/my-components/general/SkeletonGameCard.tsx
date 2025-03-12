@@ -20,10 +20,10 @@ const SkeletonGameCard = ({ gamesDisplay }: Props) => {
         <p className="bg-neutral-600 w-[30%] h-6" />
         <div className=" flex items-start justify-between">
           <p className="bg-neutral-600 h-6" />
-          <p className="flex space-x-4 justify-end">
+          <div className="flex space-x-4 justify-end">
             <p className="bg-neutral-600 w-[10%] h-6"></p>
             <p className="bg-neutral-600 w[10%] h-6"></p>
-          </p>
+          </div>
         </div>
       </div>
     </div>

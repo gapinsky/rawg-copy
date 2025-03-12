@@ -3,12 +3,8 @@ import { LiaXbox } from "react-icons/lia";
 import { FaPlaystation } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
 import { GamesProps } from "../useGames";
-import { GrGift } from "react-icons/gr";
-import { VscLibrary } from "react-icons/vsc";
-import { GoPlus } from "react-icons/go";
 import GameCardActionButtons from "./GameCardActionButtons";
 import GameCardMetaScore from "./GameCardMetaScore";
-import { lazy } from "react";
 
 interface Props extends GamesProps {
   gamesDisplay: string;
@@ -59,8 +55,10 @@ const GameCard = ({
       />
       <div className="py-2 px-4 flex flex-col ">
         <div className="flex space-x-3 ">
-          {uniquePlatformArray.map((item) => (
-            <p className="text-xl ">{getLogo(item)}</p>
+          {uniquePlatformArray.map((item, index) => (
+            <p className="text-xl " key={index}>
+              {getLogo(item)}
+            </p>
           ))}
         </div>
         <p className="text-2xl font-semibold lg:text-3xl my-1">{name}</p>

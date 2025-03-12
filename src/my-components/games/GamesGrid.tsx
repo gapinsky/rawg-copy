@@ -37,9 +37,9 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
   if (status === "error") return <p>{error.message}</p>;
   return (
     <div className="flex flex-col  w-full  ">
-      {data.pages.map((page) => (
+      {data.pages.map((page, pageIndex) => (
         <div
-          key={page.currentPage}
+          key={pageIndex}
           className={`
              grid grid-cols-1 justify-items-center   gap-x-10  ${
                gamesDisplay === "grid" ? "  xl:grid-cols-3" : "grid-cols-1"
@@ -47,9 +47,8 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
         >
           {page.data.map((item) => (
             <GameCard
-
-              gamesDisplay={gamesDisplay}
               key={item.id}
+              gamesDisplay={gamesDisplay}
               slug={item.slug}
               released={item.released}
               background_image={item.background_image}

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
 // import useGenres from "../genres/useGenres";
-import GenresList from "../genres/GenresList";
+import GenresList from "../aside/genres/GenresList";
 import AsideNavList from "../aside/AsideNavList";
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
