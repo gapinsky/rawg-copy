@@ -8,9 +8,9 @@ const GamesByGenre = () => {
   const [gamesDisplay, setGamesDisplay] = useState("grid");
   const link = useLocation();
   return (
-    <div className="w-full ">
-      <p className="text-5xl font-semibold  mb-2">
-        {link.state?.genreName} Games
+    <div className="w-full lg:p-5">
+      <p className="text-4xl lg:text-5xl font-semibold  mb-4">
+        {link.state.genreName} Games
       </p>
       <div className="flex items-center justify-start  lg:justify-between">
         <GamesSortSelects />

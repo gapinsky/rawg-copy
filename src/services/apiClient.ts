@@ -14,19 +14,21 @@ class APIClient<T> {
       .then((res) => res.data.results);
   };
 
-  // getGames = () => {
-  //   return axiosInstance
-  //   .get(`/games?key=${APIClient.API_KEY}&page_size=9`)
-  //   .then((res) => res.data);
-  // };
   getGames = <T extends GamesProps>({
     pageParam,
+    genre,
   }: {
     pageParam: number;
+    genre: string;
   }): Promise<getGamesProps> => {
     return axiosInstance
       .get<{ results: T[] }>("/games", {
-        params: { page: pageParam, page_size: 9, key: APIClient.API_KEY },
+        params: {
+          page: pageParam,
+          page_size: 9,
+          key: APIClient.API_KEY,
+          ...(genre !== "" && { genres: genre }),
+        },
       })
       .then((res) => {
         return {

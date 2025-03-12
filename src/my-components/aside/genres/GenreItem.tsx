@@ -7,19 +7,24 @@ interface Props {
 }
 
 const GenreItem = ({ name, image, slug }: Props) => {
-  const slugX = slug;
   return (
     <NavLink
-    state={{genreName: name}}
+      onClick={() => scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+      state={{ genreName: name }}
       to={`/${slug}`}
-      className="flex items-center justify-start  whitespace-break-spaces  "
+      className={({ isActive }) =>
+        `flex items-center justify-start  whitespace-break-spaces ${
+          isActive ? "font-semibold scale-110 ml-5" : ""
+        }`
+      }
     >
+      {/* flex items-center justify-start  whitespace-break-spaces */}
       <img
         src={image}
         alt={`${name} image`}
         className="h-8  aspect-square object-center object-cover mr-2 rounded-md bg-neutral-300"
       />{" "}
-      <span className="text-lg font-semibold">{name}</span>
+      <span className="text-lg ">{name}</span>
     </NavLink>
   );
 };

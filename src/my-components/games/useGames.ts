@@ -24,14 +24,26 @@ const apiClient = new APIClient<GamesProps[]>();
 //     staleTime: 5 * 60 * 1000,
 
 //   });
-const useGames = () => {
+const useGames = (genre: string) => {
   return useInfiniteQuery({
-    queryKey: ["games"],
-    queryFn: apiClient.getGames,
+    queryKey: ["games", genre],
+    queryFn: (initialPageParam) =>
+      apiClient.getGames({
+        pageParam: initialPageParam.pageParam,
+        genre: genre,
+      }),
     staleTime: 5 * 60 * 1000,
     initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });
+  // const useGames = () => {
+  //   return useInfiniteQuery({
+  //     queryKey: ["games"],
+  //     queryFn: apiClient.getGames,
+  //     staleTime: 5 * 60 * 1000,
+  //     initialPageParam: 1,
+  //     getNextPageParam: (lastPage) => lastPage.nextPage,
+  //   });
 };
 
 export default useGames;

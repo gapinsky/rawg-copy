@@ -5,12 +5,18 @@ import Loader from "../general/Loader";
 import GameCard from "./gameCard/GameCard";
 import dummyData from "../general/skeletonData";
 import SkeletonGameCard from "../general/SkeletonGameCard";
+import { useParams } from "react-router-dom";
 interface Props {
   gamesDisplay: string;
 }
 
 const GamesGrid = ({ gamesDisplay }: Props) => {
-  const { data, error, status, fetchNextPage, isFetchingNextPage } = useGames();
+  const params = useParams();
+  const genre = params.genre ? params.genre : "";
+  console.log(genre);
+  const { data, error, status, fetchNextPage, isFetchingNextPage } =
+    useGames(genre);
+  // const { data, error, status, fetchNextPage, isFetchingNextPage } = useGames();
   const { ref, inView } = useInView();
 
   useEffect(() => {
@@ -18,7 +24,7 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
       fetchNextPage();
     }
   }, [fetchNextPage, inView]);
-  // console.log(data, error, status);
+
   if (status === "pending")
     return (
       <div
