@@ -5,6 +5,7 @@ import { SiNintendoswitch } from "react-icons/si";
 import { GamesProps } from "../useGames";
 import GameCardActionButtons from "./GameCardActionButtons";
 import GameCardMetaScore from "./GameCardMetaScore";
+import { Link } from "react-router-dom";
 
 interface Props extends GamesProps {
   gamesDisplay: string;
@@ -17,6 +18,7 @@ const GameCard = ({
   metacritic,
   platforms,
   gamesDisplay,
+  slug,
 }: Props) => {
   const platformArray = platforms.map((item) => {
     if (item.platform.name.toLowerCase().includes("playstation"))
@@ -61,7 +63,13 @@ const GameCard = ({
             </p>
           ))}
         </div>
-        <p className="text-2xl font-semibold lg:text-3xl my-1">{name}</p>
+
+        <Link
+          to={`game/${slug}`}
+          className="text-2xl font-semibold lg:text-3xl my-1"
+        >
+          {name}
+        </Link>
         <GameCardMetaScore metacritic={metacritic} />
         <div className=" flex items-center justify-between ">
           <p>{released}</p>

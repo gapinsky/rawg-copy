@@ -14,13 +14,7 @@ class APIClient<T> {
       .then((res) => res.data.results);
   };
 
-  getGames = <T extends GamesProps>({
-    pageParam,
-    genre,
-  }: {
-    pageParam: number;
-    genre: string;
-  }): Promise<getGamesProps> => {
+  getGames = <T extends GamesProps>({pageParam,genre}: getGamesAtributes): Promise<getGamesProps> => {
     return axiosInstance
       .get<{ results: T[] }>("/games", {
         params: {
@@ -40,6 +34,11 @@ class APIClient<T> {
   };
 }
 export default APIClient;
+
+interface getGamesAtributes {
+  pageParam: number;
+  genre: string;
+}
 
 interface getGamesProps {
   data: GamesProps[];

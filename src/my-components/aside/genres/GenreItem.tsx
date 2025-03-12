@@ -11,14 +11,13 @@ const GenreItem = ({ name, image, slug }: Props) => {
     <NavLink
       onClick={() => scrollTo({ top: 0, left: 0, behavior: "smooth" })}
       state={{ genreName: name }}
-      to={`/${slug}`}
+      to={`genre/${slug}`}
       className={({ isActive }) =>
         `flex items-center justify-start  whitespace-break-spaces ${
           isActive ? "font-semibold scale-110 ml-5" : ""
         }`
       }
     >
-      {/* flex items-center justify-start  whitespace-break-spaces */}
       <img
         src={image}
         alt={`${name} image`}
