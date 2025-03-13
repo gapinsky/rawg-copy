@@ -14,7 +14,7 @@ const GenreItem = ({ name, image, slug }: Props) => {
       to={`genre/${slug}`}
       className={({ isActive }) =>
         `flex items-center justify-start  whitespace-break-spaces ${
-          isActive ? "font-semibold scale-110 ml-5" : ""
+          isActive ? "font-semibold " : ""
         }`
       }
     >

@@ -28,7 +28,7 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
     return (
       <div
         className={`
-        grid grid-cols-1 justify-items-center   gap-x-10  ${
+        grid grid-cols-1 justify-items-center   gap-x-10 p-5 ${
           gamesDisplay === "grid"
             ? "lg:grid-cols-2  xl:grid-cols-3"
             : "grid-cols-1"
@@ -41,13 +41,13 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
     );
   if (status === "error") return <p>{error.message}</p>;
   return (
-    <div className="flex flex-col  w-full  ">
+    <div className="flex flex-col  w-full  md:p-5 ">
       {data.pages.map((page, pageIndex) => (
         <div
           key={pageIndex}
           className={`
              grid grid-cols-1 justify-items-center   gap-x-10  ${
-               gamesDisplay === "grid" ? "  xl:grid-cols-3" : "grid-cols-1"
+               gamesDisplay === "grid" ? "  xl:grid-cols-3 " : "grid-cols-1"
              }`}
         >
           {page.data.map((item) => (

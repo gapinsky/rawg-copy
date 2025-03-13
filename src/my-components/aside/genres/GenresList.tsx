@@ -6,12 +6,9 @@ const GenresList = () => {
   const { data: genres, isLoading } = useGenres();
   if (isLoading) return <GenreSkeleton />;
   return (
-    <div className="flex flex-col space-y-4 px-2 lg:px-0  ">
+    <div className="flex flex-col  px-2 lg:px-0  md:w-[40%] lg:w-full ">
       <p className="text-2xl  font-bold">Genres</p>
-      <ul className=" space-y-3  overflow-y-scroll lg:overflow-y-auto overflow-x-hidden">
-        {/* <li className="text-xl lg:text-2xl font-bold hidden lg:block">
-          Genres
-        </li> */}
+      <ul className=" space-y-3  overflow-y-scroll md:space-y-6  py-4 lg:overflow-y-auto overflow-x-hidden">
         {genres?.map((genre) => (
           <GenreItem
             name={genre.name}

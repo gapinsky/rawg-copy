@@ -45,31 +45,37 @@ const GameCard = ({
   return (
     <div
       className={`${
-        gamesDisplay === "col" ? "w-[70%]" : "lg:w-[80%] xl:w-full"
-      } h-fit hover:scale-105 duration-150 ease-in-out border-2  border-neutral-100 my-5 rounded-lg overflow-hidden shadow-lg text-neutral-900  bg-neutral-100 dark:shadow-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:border-neutral-800`}
+        gamesDisplay === "col"
+          ? "w-[90%] md:w-[80%] xl:w-[50%]"
+          : "w-[90%] xl:w-full"
+      } flex flex-col justify-between   hover:scale-105 duration-150 ease-in-out border-2  border-neutral-100 my-5 rounded-lg overflow-hidden shadow-lg text-neutral-900  bg-neutral-100 dark:shadow-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:border-neutral-800`}
     >
       <img
         src={background_image}
         alt={`${name} thumbnail`}
         className={`${
-          gamesDisplay === "col" ? "h-[300px] object-top" : "md:h-64"
-        } h-52 object-center object-cover   bg-neutral-500 w-full`}
+          gamesDisplay === "col"
+            ? "h-[200px] md:h-[300px] xl:h-[350px]"
+            : "md:h-60 "
+        }   object-center object-cover   bg-neutral-500 w-full `}
+        // md:w-xl
       />
-      <div className="py-2 px-4 flex flex-col  ">
-        <div className="flex space-x-3 ">
+      <div className="px-4">
+        <div className="flex space-x-3 my-2 ">
           {uniquePlatformArray.map((item, index) => (
             <p className="text-xl " key={index}>
               {getLogo(item)}
             </p>
           ))}
         </div>
-
         <Link
           to={`game/${slug}`}
           className="text-2xl font-semibold lg:text-3xl my-2"
         >
           {name}
         </Link>
+      </div>
+      <div className="my-2 px-4   ">
         <GameCardMetaScore metacritic={metacritic} />
         <div className=" flex items-center justify-between ">
           <p className="text-sm">Release: {released}</p>

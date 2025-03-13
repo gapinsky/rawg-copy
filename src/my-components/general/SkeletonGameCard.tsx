@@ -11,7 +11,7 @@ const SkeletonGameCard = ({ gamesDisplay }: Props) => {
     >
       <div
         className={`${
-          gamesDisplay === "col" ? "h-[300px] object-top" : "md:h-64"
+          gamesDisplay === "col" ? "h-[300px] " : "md:h-64"
         } h-52    bg-neutral-500 w-full`}
       />
       <div className="py-2 px-4 ">

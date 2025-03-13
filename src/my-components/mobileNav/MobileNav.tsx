@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
-// import useGenres from "../genres/useGenres";
 import GenresList from "../aside/genres/GenresList";
 import AsideNavList from "../aside/AsideNavList";
 const MobileNav = () => {
@@ -27,7 +26,7 @@ const MobileNav = () => {
         ref={menuRef}
         className={`${
           isOpen ? "block" : "hidden"
-        } fixed left-0 top-0 p-2 w-full h-full  bg-neutral-50 dark:bg-neutral-900 z-20 flex justify-center `}
+        }  fixed left-0 top-0 p-2 w-full h-full  bg-neutral-50 dark:bg-neutral-900 z-20 flex justify-center  `}
       >
         <GenresList />
         <AsideNavList />

@@ -3,8 +3,8 @@ import { VscLibrary } from "react-icons/vsc";
 
 const AsideNavList = () => {
   return (
-    <ul className="w-[40%] px-2  space-y-4 lg:px-0 lg:space-y-2 lg:w-fit ">
-      <li className="text-2xl font-bold">Home</li>
+    <ul className="w-[40%] px-2  space-y-8 md:w-fit  lg:px-0 lg:space-y-4 lg:w-full  ">
+      <li className="text-2xl font-bold ">Home</li>
       <li className="text-lg flex items-center">
         nickname
         <img
