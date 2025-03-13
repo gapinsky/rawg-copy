@@ -8,16 +8,22 @@ export interface GameDetailsProps {
   background_image_additional: string;
   description_raw: string;
   released: string;
+  genres: {id: number, name: string}[];
   metacritic: number;
-  publisher: { id: number; name: string; image_background: string }[];
+  publishers: { id: number; name: string; image_background: string }[];
   platforms: GameDetailsPlatformsProps[];
   ratings: GameDetailsRatingsProps[];
   esrb_rating: { id: number; name: string };
+  stores: GameDetailsStoresProps[];
+}
+
+export interface GameDetailsStoresProps {
+  id: number;
+  store: { id: number; name: string; domain: string };
 }
 
 export interface GameDetailsPlatformsProps {
-  id: number;
-  name: string;
+  platform: { id: number; name: string };
 }
 
 export interface GameDetailsRatingsProps {

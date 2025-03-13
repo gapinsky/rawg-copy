@@ -1,5 +1,4 @@
 import { GoDotFill } from "react-icons/go";
-import { GameDetailsRatingsProps } from "./useGame";
 
 interface Props {
   id: number;
@@ -12,9 +11,9 @@ interface ratingsProps {
 
 const GamePageRatingBar = ({ ratings }: ratingsProps) => {
   return (
-    <div>
-      {" "}
-      <div className=" w-[80%] rounded-md overflow-hidden flex">
+    <div className="flex flex-col items-center w-full ">
+      <p className="mb-2 self-start opacity-60">Community rating</p>
+      <div className=" w-full rounded-sm  overflow-hidden flex mb-1 xl:w-full">
         {ratings?.map((rating) => (
           <div
             key={rating.id}
@@ -27,9 +26,9 @@ const GamePageRatingBar = ({ ratings }: ratingsProps) => {
           />
         ))}
       </div>
-      <p className="flex">
+      <p className="flex flex-wrap gap-2">
         {ratings?.map((rating) => (
-          <span className="px-2 flex font-semibold">
+          <span className=" flex font-semibold text-sm ">
             <GoDotFill
               className={`
                       ${rating.title === "exceptional" && "text-lime-600"} 
@@ -38,7 +37,7 @@ const GamePageRatingBar = ({ ratings }: ratingsProps) => {
                       ${rating.title === "skip" && "text-red-600"} 
                       text-2xl`}
             />
-            {rating.title}
+            {rating.percent}% - {rating.title}
           </span>
         ))}
       </p>
