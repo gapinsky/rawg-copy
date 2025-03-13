@@ -14,7 +14,7 @@ const GameCardMetaScore = ({ metacritic }: Props) => {
       <span className="font-normal text-neutral-900 dark:text-neutral-50 ">
         Rating:{" "}
       </span>
-      {metacritic}{" "}
+      {metacritic ? metacritic : "Unrated"}{" "}
       <span className="text-neutral-900 dark:text-neutral-50">/100</span>
     </p>
   );

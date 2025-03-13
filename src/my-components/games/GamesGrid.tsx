@@ -13,7 +13,6 @@ interface Props {
 const GamesGrid = ({ gamesDisplay }: Props) => {
   const params = useParams();
   const genre = params.genre ? params.genre : "";
-  console.log(genre);
   const { data, error, status, fetchNextPage, isFetchingNextPage } =
     useGames(genre);
   // const { data, error, status, fetchNextPage, isFetchingNextPage } = useGames();

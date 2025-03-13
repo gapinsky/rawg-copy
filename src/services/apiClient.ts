@@ -14,7 +14,10 @@ class APIClient<T> {
       .then((res) => res.data.results);
   };
 
-  getGames = <T extends GamesProps>({pageParam,genre}: getGamesAtributes): Promise<getGamesProps> => {
+  getGames = <T extends GamesProps>({
+    pageParam,
+    genre,
+  }: getGamesAtributes): Promise<getGamesProps> => {
     return axiosInstance
       .get<{ results: T[] }>("/games", {
         params: {
@@ -31,6 +34,16 @@ class APIClient<T> {
           nextPage: res.data.results.length === 9 ? pageParam + 1 : null,
         };
       });
+  };
+
+  getGame = (gameSlug: string) => {
+    return axiosInstance
+      .get(`/games/${gameSlug}`, {
+        params: {
+          key: APIClient.API_KEY,
+        },
+      })
+      .then((res) => res.data);
   };
 }
 export default APIClient;

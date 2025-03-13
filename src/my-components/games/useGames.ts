@@ -17,13 +17,6 @@ interface Platforms {
 
 const apiClient = new APIClient<GamesProps[]>();
 
-// const useGames = (pageNumber: number = 1) => {
-//   return useQuery<GamesProps[], Error>({
-//     queryKey: ["games", pageNumber],
-//     queryFn: () => apiClient.getGames(pageNumber),
-//     staleTime: 5 * 60 * 1000,
-
-//   });
 const useGames = (genre: string) => {
   return useInfiniteQuery({
     queryKey: ["games", genre],
@@ -36,14 +29,7 @@ const useGames = (genre: string) => {
     initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });
-  // const useGames = () => {
-  //   return useInfiniteQuery({
-  //     queryKey: ["games"],
-  //     queryFn: apiClient.getGames,
-  //     staleTime: 5 * 60 * 1000,
-  //     initialPageParam: 1,
-  //     getNextPageParam: (lastPage) => lastPage.nextPage,
-  //   });
+
 };
 
 export default useGames;

@@ -46,7 +46,7 @@ const GameCard = ({
     <div
       className={`${
         gamesDisplay === "col" ? "w-[70%]" : "lg:w-[80%] xl:w-full"
-      } hover:scale-105 duration-150 ease-in-out border-2  border-neutral-100 my-5 rounded-lg overflow-hidden shadow-lg text-neutral-900  bg-neutral-100 dark:shadow-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:border-neutral-800`}
+      } h-fit hover:scale-105 duration-150 ease-in-out border-2  border-neutral-100 my-5 rounded-lg overflow-hidden shadow-lg text-neutral-900  bg-neutral-100 dark:shadow-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:border-neutral-800`}
     >
       <img
         src={background_image}
@@ -55,7 +55,7 @@ const GameCard = ({
           gamesDisplay === "col" ? "h-[300px] object-top" : "md:h-64"
         } h-52 object-center object-cover   bg-neutral-500 w-full`}
       />
-      <div className="py-2 px-4 flex flex-col ">
+      <div className="py-2 px-4 flex flex-col  ">
         <div className="flex space-x-3 ">
           {uniquePlatformArray.map((item, index) => (
             <p className="text-xl " key={index}>
