@@ -66,13 +66,13 @@ const GameCard = ({
 
         <Link
           to={`game/${slug}`}
-          className="text-2xl font-semibold lg:text-3xl my-1"
+          className="text-2xl font-semibold lg:text-3xl my-2"
         >
           {name}
         </Link>
         <GameCardMetaScore metacritic={metacritic} />
         <div className=" flex items-center justify-between ">
-          <p>{released}</p>
+          <p className="text-sm">Release: {released}</p>
           <GameCardActionButtons />
         </div>
       </div>

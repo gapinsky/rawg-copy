@@ -3,61 +3,14 @@ import useGame from "./useGame";
 
 const GamePage = () => {
   const params = useParams();
-  const gameSlug = params?.game;
+  const gameSlug = params.game ? params.game : "";
   const { data: game, isLoading, error } = useGame(gameSlug);
-  console.log(game);
+  if (isLoading) return <p>Loading</p>;
+  console.log(game?.name);
   return (
-    <div className="bg-red-500 w-full h-57 z-50">
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div className="bg-red-500 w-full h-57 ">
+      <p>{game?.name}</p>
+      <p>{game?.released}</p>
     </div>
   );
 };

@@ -37,8 +37,9 @@ class APIClient<T> {
   };
 
   getGame = (gameSlug: string) => {
+    if (gameSlug.trim() === "") return;
     return axiosInstance
-      .get(`/games/${gameSlug}`, {
+      .get<T>(`/games/${gameSlug}`, {
         params: {
           key: APIClient.API_KEY,
         },
