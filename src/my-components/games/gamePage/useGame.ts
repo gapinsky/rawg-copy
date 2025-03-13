@@ -16,7 +16,8 @@ export interface GameDetailsProps {
 }
 
 export interface GameDetailsPlatformsProps {
-  platform: { id: number; name: string };
+  id: number;
+  name: string;
 }
 
 export interface GameDetailsRatingsProps {
