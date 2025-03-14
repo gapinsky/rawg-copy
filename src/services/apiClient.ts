@@ -1,3 +1,4 @@
+import { GamePkProps } from "@/my-components/games/gamePage/useGameScreenshots";
 import { GamesProps } from "@/my-components/games/useGames";
 import axios from "axios";
 
@@ -40,6 +41,17 @@ class APIClient<T> {
     if (gameSlug.trim() === "") return;
     return axiosInstance
       .get<T>(`/games/${gameSlug}`, {
+        params: {
+          key: APIClient.API_KEY,
+        },
+      })
+      .then((res) => res.data);
+  };
+
+  getGameScreenshots = ({ gamePk }: GamePkProps) => {
+    if (!gamePk) return;
+    return axiosInstance
+      .get<T>(`/games/${gamePk}/screenshots`, {
         params: {
           key: APIClient.API_KEY,
         },

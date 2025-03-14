@@ -8,14 +8,15 @@ import { GamePageWhereToBuy } from "./GamePageWhereToBuy";
 import GamePageMetacritic from "./GamePageMetacritic";
 import GamePagePlatforms from "./GamePagePlatforms";
 import GamePageAbout from "./GamePageAbout";
+import GamePageLoading from "./GamePageLoading";
+import GamePageImages from "./GamePageImages";
 
 const GamePage = () => {
   const params = useParams();
   const gameSlug = params.game ? params.game : "";
   const { data: game, isLoading, error } = useGame(gameSlug);
 
-  console.log(game);
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <GamePageLoading />;
 
   return (
     <div
@@ -78,6 +79,7 @@ const GamePage = () => {
         </div>
       </GamePageGridAndOpacity>
       <footer className="border-t absolute w-full bottom-0 py-3 text-center opacity-50">
+        <GamePageImages gamePk={game?.id} />
         <p>&copy; Antoni Gapiński </p>
         <p>
           This website was created as a private project and is not affiliated
