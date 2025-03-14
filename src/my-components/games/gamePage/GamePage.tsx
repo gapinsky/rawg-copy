@@ -10,6 +10,7 @@ import GamePagePlatforms from "./GamePagePlatforms";
 import GamePageAbout from "./GamePageAbout";
 import GamePageLoading from "./GamePageLoading";
 import GamePageImages from "./GamePageImages";
+import ErrorPage from "@/my-components/general/ErrorPage";
 
 const GamePage = () => {
   const params = useParams();
@@ -17,7 +18,7 @@ const GamePage = () => {
   const { data: game, isLoading, error } = useGame(gameSlug);
 
   if (isLoading) return <GamePageLoading />;
-
+  if (error) return <ErrorPage message={error.message} />;
   return (
     <div
       className="relative flex flex-col justify-between w-full z-0 bg-top bg-no-repeat  overflow-hidden xl:bg-contain"
@@ -72,11 +73,6 @@ const GamePage = () => {
           </div>
         </div>
         <div className="xl:col-span-2">
-          {/* <img
-            src={game?.background_image_additional}
-            alt={`${game?.name} image`}
-            className="w-full rounded-lg"
-          /> */}
           <GamePageImages gamePk={game?.id} />
           <div className="mt-6 px-2 xl:px-0">
             <GamePageWhereToBuy stores={game?.stores} />
@@ -84,7 +80,16 @@ const GamePage = () => {
         </div>
       </GamePageGridAndOpacity>
       <footer className="border-t  w-full  py-3 text-center opacity-50">
-        <p>&copy; Antoni Gapiński </p>
+        <p>
+          Created by{" "}
+          <a
+            href="https://www.linkedin.com/in/antoni-gapinski"
+            target="_blank"
+            className="underline underline-offset-2 font-semibold"
+          >
+            Antoni Gapiński
+          </a>{" "}
+        </p>
         <p>
           This website was created as a private project and is not affiliated
           with rawg.com

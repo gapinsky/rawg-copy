@@ -36,7 +36,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
               <img
                 onClick={() => handleImages(index + 1)}
                 src={item.image}
-                className=" rounded-md shadow-md hover:cursor-pointer min-h-full object-cover"
+                className=" rounded-md shadow-md hover:cursor-pointer min-h-full object-cover bg-neutral-600"
                 alt="screenshot from game"
               />
             </DialogTrigger>
@@ -49,7 +49,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                   images?.results[images?.results.length - 1].image
                 })`,
               }}
-              className=" w-full h-full rounded-md bg-center bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
+              className=" w-full h-full rounded-md bg-center bg-neutral-600 bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
             >
               <div className="w-full h-full bg-neutral-700/80 flex flex-col items-center justify-center">
                 <RxDotsHorizontal className="text-3xl" />
