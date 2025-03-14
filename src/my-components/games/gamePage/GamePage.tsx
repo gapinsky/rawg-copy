@@ -20,7 +20,7 @@ const GamePage = () => {
 
   return (
     <div
-      className="relative w-full z-0 bg-top bg-no-repeat  overflow-hidden xl:bg-contain"
+      className="relative flex flex-col justify-between w-full z-0 bg-top bg-no-repeat  overflow-hidden xl:bg-contain"
       style={{
         backgroundImage: `url(${game?.background_image})`,
       }}
@@ -67,19 +67,19 @@ const GamePage = () => {
           </div>
         </div>
         <div className="xl:col-span-2">
-          <img
+          {/* <img
             src={game?.background_image_additional}
             alt={`${game?.name} image`}
             className="w-full rounded-lg"
-          />
+          /> */}
+          <GamePageImages gamePk={game?.id} />
           <div className="mt-6 px-2 xl:px-0">
             <GamePageWhereToBuy stores={game?.stores} />
             <GamePagePlatforms platforms={game?.platforms} />
           </div>
         </div>
       </GamePageGridAndOpacity>
-      <footer className="border-t absolute w-full bottom-0 py-3 text-center opacity-50">
-        <GamePageImages gamePk={game?.id} />
+      <footer className="border-t  w-full  py-3 text-center opacity-50">
         <p>&copy; Antoni Gapiński </p>
         <p>
           This website was created as a private project and is not affiliated
