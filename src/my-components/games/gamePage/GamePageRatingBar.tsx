@@ -13,7 +13,7 @@ const GamePageRatingBar = ({ ratings }: ratingsProps) => {
   return (
     <div className="flex flex-col items-center w-full ">
       <p className="mb-2 self-start opacity-60">Community rating</p>
-      <div className=" w-full rounded-sm  overflow-hidden flex mb-1 xl:w-full">
+      <div className=" w-full rounded-sm  overflow-hidden flex mb-1  ">
         {ratings?.map((rating) => (
           <div
             key={rating.id}
@@ -28,7 +28,7 @@ const GamePageRatingBar = ({ ratings }: ratingsProps) => {
       </div>
       <p className="flex flex-wrap gap-2">
         {ratings?.map((rating) => (
-          <span className=" flex font-semibold text-sm ">
+          <span className=" flex font-semibold text-sm " key={rating.id}>
             <GoDotFill
               className={`
                       ${rating.title === "exceptional" && "text-lime-600"} 
