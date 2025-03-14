@@ -8,7 +8,7 @@ const GamePageAbout = ({ gameDescription }: Props) => {
   const [isExpand, setIsExpand] = useState(false);
   return (
     <>
-      <p className="text-2xl font-semibold">About</p>
+      <p className="text-2xl font-semibold opacity-60">About</p>
       <p>
         {isExpand ? gameDescription : gameDescription?.slice(0, 500)}{" "}
         <button

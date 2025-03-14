@@ -4,8 +4,8 @@ interface Props {
 
 const GamePagePlatforms = ({ platforms }: Props) => {
   return (
-    <div className="mt-6">
-      <p className="font-semibold opacity-60">Platforms</p>
+    <>
+      <p className="font-semibold opacity-60 text-xl">Platforms</p>
       {platforms?.map((platform, index) => (
         <span key={platform.platform.id}>
           {platform.platform.name}
@@ -13,7 +13,7 @@ const GamePagePlatforms = ({ platforms }: Props) => {
         </span>
       ))}
       .
-    </div>
+    </>
   );
 };
 

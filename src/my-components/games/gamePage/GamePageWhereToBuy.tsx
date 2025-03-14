@@ -14,7 +14,7 @@ export const GamePageWhereToBuy = ({ stores }: Props) => {
             key={store.id}
             href={`https://${store.store.domain}`}
             target="_blank"
-            className=" py-2 bg-neutral-700 text-neutral-300 text-center w-full rounded-sm hover:bg-neutral-600"
+            className=" py-2 bg-gradient-to-tr from-neutral-700 to-neutral-500 text-neutral-200 font-semibold text-center w-full rounded-sm hover:from-neutral-500"
           >
             {store.store.name}
           </a>

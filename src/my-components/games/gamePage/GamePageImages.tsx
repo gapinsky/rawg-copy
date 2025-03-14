@@ -27,7 +27,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
             onClick={() => handleImages(0)}
             src={images?.results[0].image}
             alt="screenshot from game"
-            className="rounded-xl shadow-md hover:cursor-pointer"
+            className="rounded-md shadow-md hover:cursor-pointer"
           />
         </DialogTrigger>
         <div className="grid grid-cols-2 grid-rows-2 gap-2 py-2 w-full h-full">
@@ -36,7 +36,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
               <img
                 onClick={() => handleImages(index + 1)}
                 src={item.image}
-                className=" rounded-lg shadow-md hover:cursor-pointer min-h-full object-cover"
+                className=" rounded-md shadow-md hover:cursor-pointer min-h-full object-cover"
                 alt="screenshot from game"
               />
             </DialogTrigger>
@@ -49,7 +49,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                   images?.results[images?.results.length - 1].image
                 })`,
               }}
-              className=" w-full h-full rounded-lg bg-center bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
+              className=" w-full h-full rounded-md bg-center bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
             >
               <div className="w-full h-full bg-neutral-700/80 flex flex-col items-center justify-center">
                 <RxDotsHorizontal className="text-3xl" />
@@ -58,7 +58,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
             </div>
           </DialogTrigger>
         </div>
-        <DialogContent className=" bg-neutral-900/50    min-w-[100vw] h-[100vh] rounded-lg   flex  items-center justify-center ">
+        <DialogContent className=" bg-neutral-900/50    min-w-[100vw] h-[100vh]    flex  items-center justify-center ">
           <Carousel
             className="max-w-[85vw] md:max-w-[85vw] "
             opts={{ startIndex: activeIndex }}

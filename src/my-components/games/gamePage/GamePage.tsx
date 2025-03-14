@@ -27,7 +27,9 @@ const GamePage = () => {
     >
       <GamePageGridAndOpacity>
         <div className=" space-y-8  col-span-1 xl:col-span-3 ">
-          <p className="text-6xl font-bold xl:text-8xl">{game?.name}</p>
+          <p className="text-6xl font-bold xl:text-8xl text-neutral-800 dark:text-neutral-200">
+            {game?.name}
+          </p>
           <p className="flex space-x-8">
             <GamePageButton>
               My Library <FaCirclePlus className=" text-3xl text-lime-400" />
@@ -64,6 +66,9 @@ const GamePage = () => {
               <p className="text-xl font-semibold opacity-60">Age rating</p>
               <p>{game?.esrb_rating?.name ?? "Not added"}</p>
             </div>
+            <div>
+              <GamePagePlatforms platforms={game?.platforms} />
+            </div>
           </div>
         </div>
         <div className="xl:col-span-2">
@@ -75,7 +80,6 @@ const GamePage = () => {
           <GamePageImages gamePk={game?.id} />
           <div className="mt-6 px-2 xl:px-0">
             <GamePageWhereToBuy stores={game?.stores} />
-            <GamePagePlatforms platforms={game?.platforms} />
           </div>
         </div>
       </GamePageGridAndOpacity>
