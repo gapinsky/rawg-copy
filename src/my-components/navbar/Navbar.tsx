@@ -17,7 +17,7 @@ const Navbar = () => {
         className="max-w-[50%] md:max-w-[70%] lg:max-w-[75%] "
       />
       <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6">
-        <div className="hidden text-neutral-500  xl:flex text-3xl items-end space-x-4 dark:text-neutral-200">
+        <div className="hidden text-neutral-500  xl:flex text-3xl items-end space-x-4 dark:text-neutral-300">
           <GrGift className="text-3xl mb-0.5" />
           <VscLibrary />
         </div>

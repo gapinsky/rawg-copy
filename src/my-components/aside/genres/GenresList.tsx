@@ -8,7 +8,7 @@ const GenresList = () => {
   return (
     <div className="flex flex-col  px-2 lg:px-0  md:w-[40%] lg:w-full ">
       <p className="text-2xl  font-bold">Genres</p>
-      <ul className=" space-y-3  overflow-y-scroll md:space-y-6  py-4 lg:overflow-y-auto overflow-x-hidden">
+      <ul className=" space-y-3  overflow-y-scroll md:space-y-4  py-4 lg:overflow-y-auto overflow-x-hidden">
         {genres?.map((genre) => (
           <GenreItem
             name={genre.name}
