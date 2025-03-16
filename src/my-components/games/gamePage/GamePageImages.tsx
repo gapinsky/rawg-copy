@@ -60,7 +60,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
         </div>
         <DialogContent className=" bg-neutral-900/50    min-w-[100vw] h-[100vh]    flex  items-center justify-center ">
           <Carousel
-            className="max-w-[85vw] md:max-w-[85vw] "
+            className="max-w-[75vw] md:max-w-[85vw] "
             opts={{ startIndex: activeIndex }}
           >
             <CarouselContent>
@@ -74,7 +74,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                     alt="game screenshot"
                     className="w-full max-h-[75%] object-center md:max-h-[80%]"
                   />
-                  <p className="text-sm">
+                  <p className="text-sm text-neutral-50 dark:text-enutral-50">
                     Image {index + 1} of {images?.results.length}
                   </p>
                 </CarouselItem>
