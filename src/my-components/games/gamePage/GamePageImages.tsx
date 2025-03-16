@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/carousel";
 import useGameScreenshots, { GamePkProps } from "./useGameScreenshots";
 import { RxDotsHorizontal } from "react-icons/rx";
-import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const GamePageImages = (gamePk: GamePkProps) => {
@@ -21,6 +20,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
   if (!isLoading) console.log(images?.results[0].image);
   return (
     <div className=" w-full">
+      {error && <p>Error - unable to download images.</p>}
       <Dialog>
         <DialogTrigger asChild>
           <img
