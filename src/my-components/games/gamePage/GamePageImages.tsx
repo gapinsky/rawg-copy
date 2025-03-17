@@ -32,7 +32,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
             onClick={() => handleImages(0)}
             src={images?.results[0].image}
             alt="screenshot from game"
-            className="rounded-md shadow-md hover:cursor-pointer"
+            className="w-full  rounded-md shadow-md hover:cursor-pointer"
           />
         </DialogTrigger>
         <div className="grid grid-cols-2 grid-rows-2 gap-2 py-2 w-full h-full">
@@ -54,7 +54,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                   images?.results[images?.results.length - 1].image
                 })`,
               }}
-              className=" w-full h-full rounded-md bg-center bg-neutral-600 bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
+              className="w-full h-full rounded-md bg-center bg-neutral-600 bg-cover text-neutral-200 shadow-md overflow-hidden hover:cursor-pointer"
             >
               <div className="w-full h-full bg-neutral-700/80 flex flex-col items-center justify-center">
                 <RxDotsHorizontal className="text-3xl" />
@@ -77,7 +77,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                   <img
                     src={item.image}
                     alt="game screenshot"
-                    className="w-full max-h-[75%] object-center md:max-h-[80%]"
+                    className="w-full max-h-[90vh] object-center "
                   />
                   <p className="text-sm text-neutral-50 dark:text-enutral-50">
                     Image {index + 1} of {images?.results.length}

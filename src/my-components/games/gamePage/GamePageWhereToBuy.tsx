@@ -19,6 +19,7 @@ export const GamePageWhereToBuy = ({ stores }: Props) => {
             {store.store.name}
           </a>
         ))}
+        {stores?.length === 0 && <p>Not added</p>}
       </div>
     </>
   );

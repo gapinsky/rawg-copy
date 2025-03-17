@@ -12,7 +12,7 @@ const GamePagePlatforms = ({ platforms }: Props) => {
           {index !== platforms.length - 1 ? ", " : ""}
         </span>
       ))}
-      .
+      {platforms?.length === 0 && <p>Not added</p>}
     </>
   );
 };

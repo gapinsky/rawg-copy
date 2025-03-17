@@ -50,19 +50,21 @@ const GamePage = () => {
               {game?.publishers.map((item) => (
                 <p key={item.id}> {item.name}</p>
               ))}
+              {game?.publishers.length == 0 && <p>Not added</p>}
             </div>
             <div>
               <p className="text-xl font-semibold opacity-60">Genre</p>{" "}
               {game?.genres.map((item) => (
                 <p key={item.id}>{item.name}</p>
               ))}
+              {game?.genres.length == 0 && <p>Not added</p>}
             </div>
             <div>
               <GamePageMetacritic game={game} />
             </div>
             <div>
               <p className="text-xl font-semibold opacity-60">Released</p>
-              <p>{game?.released}</p>
+              <p>{game?.released ?? "Not added"}</p>
             </div>
             <div>
               <p className="text-xl font-semibold opacity-60">Age rating</p>
@@ -79,7 +81,7 @@ const GamePage = () => {
             <GamePageWhereToBuy stores={game?.stores} />
           </div>
         </div>
-        <GamePageSimilarSuggestions gameName={game?.name} gamePk={game?.id}/>
+        <GamePageSimilarSuggestions gameName={game?.name} gamePk={game?.id} />
       </GamePageGridAndOpacity>
       <footer className="border-t  w-full  py-3 text-center opacity-50">
         <p>

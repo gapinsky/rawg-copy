@@ -32,7 +32,7 @@ const GamePageMetacritic = ({ game }: Props) => {
               
               `}
       >
-        {game?.metacritic}
+        {game?.metacritic ? game?.metacritic : "Not added"}
       </p>
     </>
   );
