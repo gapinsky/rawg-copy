@@ -70,7 +70,7 @@ const GameCard = ({
         </div>
         <Link
           to={`game/${slug}`}
-          className="text-2xl font-semibold lg:text-3xl my-2"
+          className="text-2xl font-semibold lg:text-3xl my-2 hover:opacity-70"
         >
           {name}
         </Link>

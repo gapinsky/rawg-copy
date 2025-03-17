@@ -69,6 +69,18 @@ class APIClient<T> {
       })
       .then((res) => res.data);
   };
+
+  getSearchedGames = (input: string) => {
+    return axiosInstance
+      .get<T>(`/games`, {
+        params: {
+          search: input,
+          search_precise: true,
+          key: APIClient.API_KEY,
+        },
+      })
+      .then((res) => res.data);
+  };
 }
 export default APIClient;
 
