@@ -77,7 +77,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
                   <img
                     src={item.image}
                     alt="game screenshot"
-                    className="w-full max-h-[90vh] object-center "
+                    className="w-full max-h-[90vh] object-cover "
                   />
                   <p className="text-sm text-neutral-50 dark:text-enutral-50">
                     Image {index + 1} of {images?.results.length}

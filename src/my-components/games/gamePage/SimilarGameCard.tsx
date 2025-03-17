@@ -8,21 +8,21 @@ interface Props {
 
 const SimilarGameCard = ({ name, slug, background_image }: Props) => {
   return (
-    <div className="border-blue border-2 rounded-md shadow-md overflow-hidden w-[45%] md:w-[30%] xl:w-[15%]">
+    <Link
+      to={`/game/${slug}`}
+      className="border-blue border-2 rounded-md shadow-md overflow-hidden w-[45%] md:w-[30%] xl:w-[15%] hover:scale-105 transition-transform ease-in-out duration-75"
+    >
       <img
         src={background_image}
         alt={`${name} image`}
         className="object-cover aspect-video"
       />
       <div className="p-2">
-        <Link
-          to={`/game/${slug}`}
-          className=" font-semibold hover:cursor-pointer"
-        >
+        <p className=" font-semibold hover:cursor-pointer hover:opacity-70">
           {name}
-        </Link>
+        </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
