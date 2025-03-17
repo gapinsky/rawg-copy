@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useSearchGames from "../useSearchGames";
 import { TbLoader2 } from "react-icons/tb";
 interface Props {
@@ -15,16 +16,18 @@ const SuggestionsList = ({ debouncedInput }: Props) => {
       )}
       {error && <li className="text-red-500 text-center">{error.message}😞</li>}
       {games?.results.slice(0, 10).map((game) => (
-        <li
-          key={game.id}
-          className="p-2  flex items-center text-lg border-y hover:bg-neutral-200 hover:dark:bg-neutral-700"
-        >
-          <img
-            src={game.background_image}
-            alt={`${game.name} thumbnail`}
-            className="h-10 aspect-square object-cover rounded-sm mr-3"
-          />
-          {game.name}
+        <li key={game.id}>
+          <Link
+            to={`/game/${game.slug}`}
+            className="p-2  flex items-center text-lg border-y hover:bg-neutral-200 hover:dark:bg-neutral-700"
+          >
+            <img
+              src={game.background_image}
+              alt={`${game.name} thumbnail`}
+              className="h-10 aspect-square object-cover rounded-sm mr-3"
+            />
+            {game.name}
+          </Link>
         </li>
       ))}
     </ul>
