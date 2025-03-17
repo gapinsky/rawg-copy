@@ -79,7 +79,7 @@ const GamePage = () => {
             <GamePageWhereToBuy stores={game?.stores} />
           </div>
         </div>
-        <GamePageSimilarSuggestions gameName={game?.name}/>
+        <GamePageSimilarSuggestions gameName={game?.name} gamePk={game?.id}/>
       </GamePageGridAndOpacity>
       <footer className="border-t  w-full  py-3 text-center opacity-50">
         <p>

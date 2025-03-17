@@ -17,7 +17,12 @@ const GamePageImages = (gamePk: GamePkProps) => {
     setActiveIndex(imageId);
   };
 
-  if (!isLoading) console.log(images?.results[0].image);
+  if (isLoading)
+    return (
+      <div className="w-full">
+        <p>Loading...</p>
+      </div>
+    );
   return (
     <div className=" w-full">
       {error && <p>Error - unable to download images.</p>}

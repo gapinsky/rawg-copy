@@ -58,6 +58,17 @@ class APIClient<T> {
       })
       .then((res) => res.data);
   };
+
+  getSimilarGames = (gamePk: number) => {
+    if (!gamePk) return;
+    return axiosInstance
+      .get<T>(`/games/${gamePk}/game-series`, {
+        params: {
+          key: APIClient.API_KEY,
+        },
+      })
+      .then((res) => res.data);
+  };
 }
 export default APIClient;
 
