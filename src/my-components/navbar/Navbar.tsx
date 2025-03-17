@@ -4,7 +4,7 @@ import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { GrGift } from "react-icons/gr";
 import { VscLibrary } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import SearchInput from "./SearchInput";
+import SearchInput from "./searchbar/SearchInput";
 const Navbar = () => {
   return (
     <nav className="sticky  z-10 inset-0 top-0 h-fit  flex items-center justify-around  py-3 md:py-5 border-b-2 bg-neutral-50 dark:bg-neutral-900">
