@@ -14,14 +14,20 @@ const Navbar = () => {
 
       <SearchInput />
       <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-6">
-        <div className="hidden text-neutral-500  xl:flex text-3xl items-end space-x-4 dark:text-neutral-300">
-          <GrGift className="text-3xl mb-0.5" />
-          <VscLibrary />
+        <div className="hidden text-neutral-700  xl:flex text-3xl items-end space-x-4 dark:text-neutral-300">
+          <Link to={`wishlist/nickname`} className="hover:opacity-60">
+            <GrGift className="text-3xl mb-0.5" />
+          </Link>
+          <Link to={`library/nickname`} className="hover:opacity-60">
+            <VscLibrary />
+          </Link>
         </div>
-        <Avatar>
-          <AvatarImage src="/images/noImage.png" />
-          <AvatarFallback>AG</AvatarFallback>
-        </Avatar>
+        <Link to={`profile/nickname`} className="hover:opacity-60">
+          <Avatar>
+            <AvatarImage src="/images/noImage.png" />
+            <AvatarFallback>AG</AvatarFallback>
+          </Avatar>
+        </Link>
 
         <ModeToggle />
       </div>
