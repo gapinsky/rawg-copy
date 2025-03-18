@@ -9,7 +9,7 @@ const SuggestionsList = ({ debouncedInput }: Props) => {
   return (
     <ul className="absolute top-12 w-full rounded-lg  shadow-lg overflow-hidden bg-neutral-50 dark:bg-neutral-900">
       {isLoading && (
-        <li className="flex flex-col items-center justify-center space-y-1">
+        <li className="flex flex-col items-center justify-center space-y-1 p-2">
           <TbLoader2 className="animate-spin" />
           Loading...
         </li>
