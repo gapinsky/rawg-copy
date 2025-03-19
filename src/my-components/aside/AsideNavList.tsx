@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const AsideNavList = () => {
   return (
-    <ul className="w-[40%] px-2  space-y-8 md:w-fit  lg:px-0 lg:space-y-4 lg:w-full  ">
+    <ul className="w-[40%] px-2  space-y-8 md:w-fit  lg:px-0 lg:space-y-5 lg:w-full  ">
       <li className="text-2xl font-bold ">
         <Link to="" className="hover:opacity-60">
           Home
