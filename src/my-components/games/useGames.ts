@@ -11,7 +11,7 @@ export interface GamesProps {
   platforms: Platforms[];
 }
 
-interface Platforms {
+export interface Platforms {
   platform: { id: number; name: string };
 }
 

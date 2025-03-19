@@ -1,11 +1,8 @@
-import { IoMdDesktop } from "react-icons/io";
-import { LiaXbox } from "react-icons/lia";
-import { FaPlaystation } from "react-icons/fa";
-import { SiNintendoswitch } from "react-icons/si";
 import { GamesProps } from "../useGames";
 import GameCardActionButtons from "./GameCardActionButtons";
 import GameCardMetaScore from "./GameCardMetaScore";
 import { Link } from "react-router-dom";
+import GameCardPlatforms from "./GameCardPlatforms";
 
 interface Props extends GamesProps {
   gamesDisplay: string;
@@ -20,28 +17,6 @@ const GameCard = ({
   gamesDisplay,
   slug,
 }: Props) => {
-  const platformArray = platforms.map((item) => {
-    if (item.platform.name.toLowerCase().includes("playstation"))
-      return "playstation";
-    if (item.platform.name.toLowerCase().includes("xbox")) return "xbox";
-    if (item.platform.name.toLowerCase().includes("pc")) return "pc";
-    if (item.platform.name.toLowerCase().includes("nintendo"))
-      return "nintendo";
-    return "";
-  });
-
-  const uniquePlatformArray = [
-    ...new Set(platformArray.filter((item) => item !== "")),
-  ];
-
-  const getLogo = (device: string) => {
-    if (device.includes("playstation")) return <FaPlaystation />;
-    if (device.includes("xbox")) return <LiaXbox />;
-    if (device.includes("pc")) return <IoMdDesktop />;
-    if (device.includes("nintendo")) return <SiNintendoswitch />;
-    return null;
-  };
-
   return (
     <div
       className={`${
@@ -58,16 +33,9 @@ const GameCard = ({
             ? "h-[200px] md:h-[300px] xl:h-[350px]"
             : "md:h-60 "
         }   object-center object-cover   bg-neutral-500 w-full `}
-        // md:w-xl
       />
       <div className="px-4">
-        <div className="flex space-x-3 my-2 ">
-          {uniquePlatformArray.map((item, index) => (
-            <p className="text-xl " key={index}>
-              {getLogo(item)}
-            </p>
-          ))}
-        </div>
+        <GameCardPlatforms platforms={platforms} />
         <Link
           to={`game/${slug}`}
           className="text-2xl font-semibold lg:text-3xl my-2 hover:opacity-70"

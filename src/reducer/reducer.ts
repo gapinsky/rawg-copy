@@ -1,4 +1,4 @@
-interface GameProps {
+export interface GameProps {
   id: number;
   name: string;
   slug: string;
