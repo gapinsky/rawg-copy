@@ -9,6 +9,7 @@ import useGameScreenshots, { GamePkProps } from "./useGameScreenshots";
 import { RxDotsHorizontal } from "react-icons/rx";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import Loader from "@/my-components/general/Loader";
 const GamePageImages = (gamePk: GamePkProps) => {
   if (!gamePk) return;
   const { data: images, isLoading, error } = useGameScreenshots(gamePk);
@@ -16,13 +17,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
   const handleImages = (imageId: number) => {
     setActiveIndex(imageId);
   };
-
-  if (isLoading)
-    return (
-      <div className="w-full">
-        <p>Loading...</p>
-      </div>
-    );
+  if (isLoading) return <Loader />;
   return (
     <div className=" w-full">
       {error && <p>Error - unable to download images.</p>}
@@ -32,7 +27,7 @@ const GamePageImages = (gamePk: GamePkProps) => {
             onClick={() => handleImages(0)}
             src={images?.results[0].image}
             alt="screenshot from game"
-            className="w-full  rounded-md shadow-md hover:cursor-pointer"
+            className="w-full  rounded-md shadow-md hover:cursor-pointer bg-neutral-600"
           />
         </DialogTrigger>
         <div className="grid grid-cols-2 grid-rows-2 gap-2 py-2 w-full h-full">
