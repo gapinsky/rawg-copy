@@ -18,11 +18,14 @@ const ProfilePage = () => {
         <div className="w-full text-3xl  ">
           <Link to="/library/nickname">Library</Link>
           <div className="mt-4 grid grid-cols-1  gap-6 md:grid-cols-3 xl:grid-cols-5">
+            {state.library.length === 0 && (
+              <p className="text-center  md:col-span-3 xl:col-span-5">Empty</p>
+            )}
             {state.library.map((item) => (
               <div className="text-lg border-2 rounded-lg overflow-hidden shadow-md ">
                 <img
                   src={item.background_image}
-                  className="max-h-36 w-full object-cover"
+                  className="h-36 w-full object-cover"
                 />
                 <p className="p-2 font-semibold ">
                   <Link to={`/game/${item.slug}`} className="hover:opacity-60">
@@ -35,12 +38,15 @@ const ProfilePage = () => {
         </div>
         <div className="w-full   text-3xl">
           <Link to="/wishlist/nickname">Wishlist</Link>
-          <div className="mt-4 grid  grid-cols-1 gap-6 md:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-4 grid  grid-cols-1 gap-6 md:grid-cols-3 xl:grid-cols-5 ">
+            {state.wishlist.length === 0 && (
+              <p className="text-center  md:col-span-3 xl:col-span-5">Empty</p>
+            )}
             {state.wishlist.map((item) => (
               <div className="text-xl border-2 rounded-lg overflow-hidden shadow-md">
                 <img
                   src={item.background_image}
-                  className="max-h-36 w-full object-cover"
+                  className="h-36 w-full object-cover"
                 />
                 <p className="p-2 font-semibold ">
                   <Link to={`/game/${item.slug}`} className="hover:opacity-60">
