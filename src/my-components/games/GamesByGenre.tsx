@@ -12,8 +12,8 @@ const GamesByGenre = () => {
       <p className="text-3xl md:text-4xl lg:text-5xl font-semibold  my-4 ml-5 ">
         {link.state?.genreName}
       </p>
-      <div className=" flex items-center justify-start  lg:justify-between">
-        <GamesSortSelects />
+      <div className=" flex items-center justify-end">
+        {/* <GamesSortSelects /> */}
         <GamesDisplayOptions
           gamesDisplay={gamesDisplay}
           setGamesDisplay={setGamesDisplay}

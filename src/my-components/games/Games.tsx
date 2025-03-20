@@ -9,8 +9,8 @@ const Games = () => {
   return (
     <div className="w-full  lg:px-5  ">
       <p className="text-3xl lg:text-5xl font-semibold my-4 ml-4">Best Games</p>
-      <div className="flex items-center justify-start  lg:justify-between">
-        <GamesSortSelects />
+      <div className="flex items-center justify-end">
+        {/* <GamesSortSelects /> */}
         <GamesDisplayOptions
           gamesDisplay={gamesDisplay}
           setGamesDisplay={setGamesDisplay}
