@@ -21,6 +21,7 @@ const LibraryPage = () => {
             slug={item.slug}
             background_image={item.background_image}
             id={item.id}
+            type="library"
           />
         ))}
       </div>
