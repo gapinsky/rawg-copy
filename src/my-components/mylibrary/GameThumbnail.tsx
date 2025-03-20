@@ -10,6 +10,7 @@ interface Props {
   background_image: string;
   slug: string;
   id: number;
+
   type: CollectionType;
 }
 

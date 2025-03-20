@@ -5,10 +5,13 @@ import GameThumbnail from "../mylibrary/GameThumbnail";
 const WishlistPage = () => {
   const { state } = useContext(reducerContext);
   return (
-    <div className="w-full p-16 space-y-12">
+    <div className="w-full p-16">
       <p className="text-6xl font-semibold">My Wishlist</p>
+      <p className="my-8 text-4xl">
+        {`Games: ${state.library.length > 0 ? state.library.length : "0"}`}
+      </p>
       <div className=" grid grid-cols-1 gap-8 md:grid-cols-2  xl:grid-cols-4 xl:gap-16">
-        {state.library.length === 0 && (
+        {state.wishlist.length === 0 && (
           <p className="text-center col-span-4 text-2xl">
             Your wishlist is empty.
           </p>

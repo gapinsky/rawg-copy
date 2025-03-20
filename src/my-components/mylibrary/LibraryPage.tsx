@@ -6,8 +6,11 @@ const LibraryPage = () => {
   const { state } = useContext(reducerContext);
   console.log(state);
   return (
-    <div className="w-full p-16 space-y-12">
+    <div className="w-full p-16 ">
       <p className="text-6xl font-semibold">My Library</p>
+      <p className="my-8 text-4xl">
+        {`Games: ${state.library.length > 0 ? state.library.length : "0"}`}
+      </p>
       <div className=" grid grid-cols-1 gap-8 md:grid-cols-2  xl:grid-cols-4 xl:gap-16">
         {state.library.length === 0 && (
           <p className="text-center col-span-4 text-2xl">
