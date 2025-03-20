@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import GamesSortSelects from "./GamesSortSelects";
+// import GamesSortSelects from "./GamesSortSelects";
 import GamesDisplayOptions from "./GamesDisplayOptions";
 import GamesGrid from "./GamesGrid";
 const Games = () => {

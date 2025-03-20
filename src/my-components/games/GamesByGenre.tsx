@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GamesGrid from "./GamesGrid";
-import GamesSortSelects from "./GamesSortSelects";
+// import GamesSortSelects from "./GamesSortSelects";
 import GamesDisplayOptions from "./GamesDisplayOptions";
 import { useLocation } from "react-router-dom";
 
