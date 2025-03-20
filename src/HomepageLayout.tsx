@@ -5,6 +5,7 @@ import Navbar from "./my-components/navbar/Navbar";
 import { useReducer } from "react";
 import { initialState, reducer } from "./reducer/reducer";
 import reducerContext from "./context/LibraryWishlistContext.ts";
+import { Toaster } from "sonner";
 
 const HomepageLayout = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -16,6 +17,7 @@ const HomepageLayout = () => {
           <Aside />
           <Outlet />
         </div>
+        <Toaster richColors />
         <MobileNav />
       </div>
     </reducerContext.Provider>

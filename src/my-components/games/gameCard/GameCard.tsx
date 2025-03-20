@@ -16,7 +16,17 @@ const GameCard = ({
   platforms,
   gamesDisplay,
   slug,
+  id,
 }: Props) => {
+
+
+  const game = {
+    name: name,
+    background_image: background_image,
+    slug: slug,
+    id: id,
+  };
+
   return (
     <div
       className={`${
@@ -47,7 +57,7 @@ const GameCard = ({
         <GameCardMetaScore metacritic={metacritic} />
         <div className=" flex items-center justify-between ">
           <p className="text-sm">Release: {released}</p>
-          <GameCardActionButtons />
+          <GameCardActionButtons game={game}/>
         </div>
       </div>
     </div>

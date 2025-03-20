@@ -3,6 +3,7 @@ import { useContext } from "react";
 
 const LibraryPage = () => {
   const { state, dispatch } = useContext(reducerContext);
+  console.log(state);
   return (
     <div>
       {state.library.map((item) => (

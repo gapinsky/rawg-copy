@@ -1,3 +1,5 @@
+import { toast } from "sonner";
+
 export interface GameProps {
   id: number;
   name: string;
@@ -24,6 +26,9 @@ export const initialState: StateProps = {
 export const reducer = (state: StateProps, action: Action): StateProps => {
   switch (action.type) {
     case "addLibrary":
+      if (state.library.some((game) => game.id === action.payload.id)) {
+        return state;
+      }
       return { ...state, library: [...state.library, action.payload] };
     case "removeLibrary":
       return {
@@ -31,6 +36,8 @@ export const reducer = (state: StateProps, action: Action): StateProps => {
         library: state.library.filter((game) => game.id !== action.payload.id),
       };
     case "addWishlist":
+      if (state.wishlist.some((game) => game.id === action.payload.id))
+        return state;
       return { ...state, wishlist: [...state.wishlist, action.payload] };
     case "removeWishlist":
       return {
