@@ -1,54 +1,19 @@
-# React + TypeScript + Vite
+I created a fully responsive application inspired by the RAWG.io platform, using the official RAWG API. The project was designed and built from the ground up, offering a modern interface with support for light and dark modes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application functionalities
+✅ Advanced game search - Navigation includes a dynamic search box with a list of suggestions, making it easy to quickly find titles of interest.
 
-Currently, two official plugins are available:
+✅ Filtering by genre - List of game categories taken directly from the API. Each genre has its own dedicated sub-page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Infinite Scroll - The game list has been optimised for performance with the implementation of Infinite Query, allowing for smooth loading of the next results.
 
-## Expanding the ESLint configuration
+✅ Detailed game page - Clicking on a game tile takes the user to a detailed view, including:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Platform information, publisher, age category and game rating.
+User reviews presented in the form of an interactive graph.
+A gallery of screenshots and gameplay footage in the form of a carousel.
+List of similar titles.
+Links to shops where the title can be purchased.
+✅ Library and wish list management - Users can add games to their library or place them on a wish list. Both sections are dynamically updated and include a filter option to quickly find titles of interest.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
