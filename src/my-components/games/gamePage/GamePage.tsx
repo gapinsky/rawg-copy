@@ -19,7 +19,7 @@ const GamePage = () => {
 
   const gameInfo = {
     id: game?.id ?? 0,
-    name: game?.name ?? "Unknown ame",
+    name: game?.name ?? "Unknown game",
     background_image: game?.background_image ?? "/images/noImage.png",
     slug: gameSlug,
   };

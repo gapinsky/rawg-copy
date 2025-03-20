@@ -7,19 +7,8 @@ import {
 } from "../../components/ui/select";
 const GamesSortSelects = () => {
   return (
-    <div>
-      {/* <Select>
-        <SelectTrigger className="w-[210px] ">
-          <span className="font-bold">Order by:</span>
-          <SelectValue placeholder="Select" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="name">Name</SelectItem>
-          <SelectItem value="popularity">Popularity</SelectItem>
-          <SelectItem value="rating">Average rating</SelectItem>
-          <SelectItem value="release">Release date</SelectItem>
-        </SelectContent>
-      </Select> */}
+    <div className="ml-4">
+   
       <Select>
         <SelectTrigger className="w-[200px]">
           <span className="font-bold">Platform:</span>
