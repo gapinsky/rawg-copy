@@ -17,9 +17,22 @@ const GamePageImages = (gamePk: GamePkProps) => {
   const handleImages = (imageId: number) => {
     setActiveIndex(imageId);
   };
-  if (isLoading) return <Loader />;
+  if (isLoading)
+    return (
+      <div className="w-full ">
+        <div className="w-full bg-neutral-600 h-[50%]">
+          <Loader />
+        </div>
+        <div className="grid grid-cols-2 grid-rows-2 gap-2 py-2 w-full h-full">
+          <div className="bg-neutral-600 min-h-full w-full"></div>
+          <div className="bg-neutral-600 min-h-full w-full"></div>
+          <div className="bg-neutral-600 min-h-full w-full"></div>
+          <div className="bg-neutral-600 min-h-full w-full"></div>
+        </div>
+      </div>
+    );
   return (
-    <div className=" w-full">
+    <div className=" w-full ">
       {error && <p>Error - unable to download images.</p>}
       <Dialog>
         <DialogTrigger asChild>
