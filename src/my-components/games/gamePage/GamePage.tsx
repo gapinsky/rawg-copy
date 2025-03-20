@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import useGame from "./useGame";
-import { FaCirclePlus, FaGift } from "react-icons/fa6";
-import GamePageButton from "./GamePageButton";
 import GamePageRatingBar from "./GamePageRatingBar";
 import GamePageGridAndOpacity from "./GamePageGridAndOpacity";
 import { GamePageWhereToBuy } from "./GamePageWhereToBuy";
@@ -12,11 +10,19 @@ import GamePageLoading from "./GamePageLoading";
 import GamePageImages from "./GamePageImages";
 import ErrorPage from "@/my-components/general/ErrorPage";
 import GamePageSimilarSuggestions from "./GamePageSimilarSuggestions";
+import GamePageActionButtons from "./GamePageActionButtons";
 
 const GamePage = () => {
   const params = useParams();
   const gameSlug = params.game ? params.game : "";
   const { data: game, isLoading, error } = useGame(gameSlug);
+
+  const gameInfo = {
+    id: game?.id ?? 0,
+    name: game?.name ?? "Unknown ame",
+    background_image: game?.background_image ?? "/images/noImage.png",
+    slug: gameSlug,
+  };
 
   if (isLoading) return <GamePageLoading />;
   if (error) return <ErrorPage message={error.message} />;
@@ -32,14 +38,7 @@ const GamePage = () => {
           <p className="text-6xl font-bold xl:text-8xl text-neutral-800 dark:text-neutral-200">
             {game?.name}
           </p>
-          <p className="flex space-x-8">
-            <GamePageButton>
-              My Library <FaCirclePlus className=" text-3xl text-lime-400" />
-            </GamePageButton>
-            <GamePageButton>
-              Wishlist <FaGift className="text-2xl text-neutral-50" />
-            </GamePageButton>
-          </p>
+          <GamePageActionButtons gameInfo={gameInfo} />
           <GamePageRatingBar ratings={game?.ratings} />
           <div className="px-2 xl:px-0">
             <GamePageAbout gameDescription={game?.description_raw} />

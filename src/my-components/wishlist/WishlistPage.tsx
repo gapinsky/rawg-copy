@@ -1,5 +1,15 @@
+import reducerContext from "@/context/LibraryWishlistContext";
+import { useContext } from "react";
+
 const WishlistPage = () => {
-  return <div>Wishlist</div>;
+  const { state, dispatch } = useContext(reducerContext);
+  return (
+    <div>
+      {state.wishlist.map((game) => (
+        <p>{game.name}</p>
+      ))}
+    </div>
+  );
 };
 
 export default WishlistPage;

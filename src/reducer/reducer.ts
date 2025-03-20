@@ -1,5 +1,3 @@
-import { toast } from "sonner";
-
 export interface GameProps {
   id: number;
   name: string;

@@ -22,7 +22,7 @@ const GameCardActionButtons = ({ game }: Props) => {
     toast.success(`${game.name} has been added to your library!`, {});
   };
 
-  const handleWishlist = (game: GameProps) => {
+ const handleWishlist = (game: GameProps) => {
     if (state.wishlist.includes(game)) {
       toast.error(`${game.name} is already in your wishlist.`);
       return;
