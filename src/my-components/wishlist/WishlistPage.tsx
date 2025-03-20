@@ -1,10 +1,11 @@
 import reducerContext from "@/context/LibraryWishlistContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GameThumbnail from "../mylibrary/GameThumbnail";
 import { BsSearch } from "react-icons/bs";
 
 const WishlistPage = () => {
   const { state } = useContext(reducerContext);
+  const [filterInput, setFilterInput] = useState("");
   return (
     <div className="w-full p-5 md:p-8 lg:p-16">
       <p className="text-5xl md:text-6xl font-semibold">My Wishlist</p>
@@ -14,6 +15,8 @@ const WishlistPage = () => {
       <p className="w-[95%] md:w-[80%] mx-auto flex justify-center items-center my-8 ">
         <BsSearch className="text-2xl mr-2  opacity-40" />
         <input
+          value={filterInput}
+          onChange={(e) => setFilterInput(e.target.value)}
           type="text"
           placeholder="Search wishlist..."
           className="w-full px-2 py-2 text-xl border-b-2 dark:border-neutral-500"
@@ -25,16 +28,20 @@ const WishlistPage = () => {
             Your wishlist is empty.
           </p>
         )}
-        {state.wishlist.map((item) => (
-          <GameThumbnail
-            key={item.id}
-            name={item.name}
-            slug={item.slug}
-            background_image={item.background_image}
-            id={item.id}
-            type="wishlist"
-          />
-        ))}
+        {state.wishlist
+          .filter((item) =>
+            item.name.toLowerCase().includes(filterInput.toLowerCase())
+          )
+          .map((item) => (
+            <GameThumbnail
+              key={item.id}
+              name={item.name}
+              slug={item.slug}
+              background_image={item.background_image}
+              id={item.id}
+              type="wishlist"
+            />
+          ))}
       </div>
     </div>
   );

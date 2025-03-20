@@ -28,22 +28,11 @@ const LibraryPage = () => {
             Your library is empty.
           </p>
         )}
-        {filterInput !== "" &&
-          state.library
-            .filter((item) =>
-              item.name.toLowerCase().includes(filterInput.toLowerCase()))
-            .map((item) => (
-              <GameThumbnail
-                key={item.id}
-                name={item.name}
-                slug={item.slug}
-                background_image={item.background_image}
-                id={item.id}
-                type="library"
-              />
-            ))}
-        {filterInput === "" &&
-          state.library.map((item) => (
+        {state.library
+          .filter((item) =>
+            item.name.toLowerCase().includes(filterInput.toLowerCase())
+          )
+          .map((item) => (
             <GameThumbnail
               key={item.id}
               name={item.name}
