@@ -15,7 +15,6 @@ const GamesGrid = ({ gamesDisplay }: Props) => {
   const genre = params.genre ? params.genre : "";
   const { data, error, status, fetchNextPage, isFetchingNextPage } =
     useGames(genre);
-  // const { data, error, status, fetchNextPage, isFetchingNextPage } = useGames();
   const { ref, inView } = useInView();
 
   useEffect(() => {
