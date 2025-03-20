@@ -2,8 +2,10 @@ import useGenres from "./useGenres";
 import GenreItem from "./GenreItem";
 import GenreSkeleton from "./GenreSkeleton";
 
+
 const GenresList = () => {
   const { data: genres, isLoading } = useGenres();
+  
   if (isLoading) return <GenreSkeleton />;
   return (
     <div className="flex flex-col  px-2 lg:px-0  md:w-[40%] lg:w-full ">

@@ -1,3 +1,5 @@
+import navContext from "@/my-components/mobileNav/NavContext";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 interface Props {
@@ -6,8 +8,11 @@ interface Props {
   slug: string;
 }
 
-const GenreItem = ({ name, image, slug }: Props) => {
+const GenreItemMobile = ({ name, image, slug }: Props) => {
+  const { toggleMenu } = useContext(navContext);
+
   const handleClick = () => {
+    toggleMenu();
     scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
@@ -32,4 +37,4 @@ const GenreItem = ({ name, image, slug }: Props) => {
   );
 };
 
-export default GenreItem;
+export default GenreItemMobile;

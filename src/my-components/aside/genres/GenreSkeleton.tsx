@@ -2,7 +2,7 @@ import dummyData from "../../general/skeletonData";
 
 const GenreSkeleton = () => {
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-3 md:space-y-4  py-4 lg:space-y-5">
       <li className="text-2xl font-bold">Genres</li>
       {dummyData.map((item) => (
         <li
